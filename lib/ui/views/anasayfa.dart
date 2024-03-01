@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:prime_video_ui_clone/ui/views/diziler_sayfa.dart';
-import 'package:prime_video_ui_clone/ui/views/film_ve_dizi_sayfa.dart';
-import 'package:prime_video_ui_clone/ui/views/filmler_sayfa.dart';
+import 'package:prime_video_ui_clone/ui/views/arama_sayfa.dart';
+import 'package:prime_video_ui_clone/ui/views/indirilenler_sayfa.dart';
+import 'package:prime_video_ui_clone/ui/views/top_tap_bar.dart';
 
 class Anasayfa extends StatefulWidget {
 
@@ -9,129 +9,76 @@ class Anasayfa extends StatefulWidget {
   State<Anasayfa> createState() => _AnasayfaState();
 }
 
-class _AnasayfaState extends State<Anasayfa> {
+class _AnasayfaState extends State<Anasayfa> with SingleTickerProviderStateMixin {
 
-  int _currentIndex = 0;
+  late TabController _tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: 3, vsync: this);
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _tabController.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.black,
-      appBar: AppBar(
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
         backgroundColor: Colors.black,
-        title: SizedBox(
-          height: 35,
-          child: Image.asset("images/logo/prime-video-logo.webp",fit: BoxFit.cover,),
-        )
-      ),
-      body: DefaultTabController(
-        length: 3,
-        child: Column(
-          children: [
-            Material(
-              child: Container(
-                height: 55,
-                color: Colors.black,
-                child: TabBar(
-                  isScrollable: true,
-                  tabAlignment: TabAlignment.start,
-                  physics: const ClampingScrollPhysics(),
-                  padding: EdgeInsets.all(10),
-                  unselectedLabelColor: Colors.white,
-                  indicatorSize: TabBarIndicatorSize.label,
-                  labelColor: Colors.black,
-                  labelStyle: TextStyle(fontWeight: FontWeight.bold,fontSize: 17),
-                  dividerColor: Colors.black,
-                  indicator: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: Colors.white
-                  ),
-
-                  tabs: [
-                    Tab(
-                      child: Container(
-                        height: 35,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20)
-                        ),
-                        child: const Align(
-                          alignment: Alignment.center,
-                          child: Padding(
-                            padding: EdgeInsets.only(right: 8.0,left: 8.0),
-                            child: Text("Tümü"),
-                          )
-                        ),
-                      ),
-                    ),
-                    Tab(
-                      child: Container(
-                        height: 35,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20)
-                        ),
-                        child: const Align(
-                            alignment: Alignment.center,
-                            child: Padding(
-                              padding: EdgeInsets.only(right: 8.0,left: 8.0),
-                              child: Text("Filmler"),
-                            )
-                        ),
-                      ),
-                    ),
-                    Tab(
-                      child: Container(
-                        height: 35,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20)
-                        ),
-                        child: const Align(
-                            alignment: Alignment.center,
-                            child: Padding(
-                              padding: EdgeInsets.only(right: 8.0,left: 8.0),
-                              child: Text("TV dizileri"),
-                            )
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+        appBar: AppBar(
+          backgroundColor: Colors.black,
+          title: SizedBox(
+            height: 35,
+            child: Image.asset("images/logo/prime-video-logo.webp",fit: BoxFit.cover,),
+          ),
+          actions: [
+            Icon(Icons.tv,color: Colors.white54,size: 30,),
+            SizedBox(
+              width: 20,
             ),
-            const Expanded(
-              child: TabBarView(
-                children: [
-                  FilmveDiziSayfa(),
-                  FilmlerSayfa(),
-                  DizilerSayfa()
-                ],
-              ),
+            Padding(
+              padding: const EdgeInsets.only(right: 15.0),
+              child: Icon(Icons.person_pin,color: Colors.lightBlue,size: 35,),
             )
           ],
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.black,
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.white60,
-        type: BottomNavigationBarType.fixed,
-        currentIndex: _currentIndex,
-        onTap: (index) {
-          _currentIndex = index;
-        },
-        items: const [
-          BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: "Anasayfa"
+        body: TabBarView(
+          controller: _tabController,
+          children: [
+            TopTapBar(),
+            IndirilenlerSayfa(),
+            AramaSayfa()
+          ],
+        ),
+        bottomNavigationBar: Container(
+          height: 50,
+          color: Colors.black,
+          child: TabBar(
+            controller:_tabController ,
+            unselectedLabelColor: Colors.white60,
+            dividerColor: Colors.black,
+            indicator: const UnderlineTabIndicator(
+                borderSide: BorderSide(width: 0.0)
+            ),
+            labelColor: Colors.white,
+            labelStyle: TextStyle(fontSize: 12.0),
+
+            tabs: const [
+              Tab(icon: Icon(Icons.home,size: 27,),iconMargin: EdgeInsets.only(top: 3),child: Text("Anasayfa",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),),
+              Tab(icon: Icon(Icons.file_download_outlined,size: 27,),iconMargin: EdgeInsets.only(top: 3),child: Text("İndirilenler",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),),
+              Tab(icon: Icon(Icons.search,size: 27,),iconMargin: EdgeInsets.only(top: 3),child: Text("Arama",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),),
+            ],
           ),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.file_download_outlined),
-              label: "İndirilenler"
-          ),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.search),
-              label: "Arama"
-          ),
-        ],
+        ),
       ),
     );
   }
 }
+
+
