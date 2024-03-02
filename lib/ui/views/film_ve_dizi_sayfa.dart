@@ -1,5 +1,6 @@
 import 'package:another_carousel_pro/another_carousel_pro.dart';
 import 'package:flutter/material.dart';
+import 'package:prime_video_ui_clone/ui/views/detay_sayfasi.dart';
 
 import '../../data/entity/diziler.dart';
 import '../../data/entity/filmler.dart';
@@ -28,6 +29,11 @@ class _FilmveDiziSayfaState extends State<FilmveDiziSayfa> {
     var d4 = Diziler(dizi_id: 8, dizi_ad: "Sherlock", film_resim_adi: "sherlock.png");
 */
 
+    filmler.add(f1);
+    filmler.add(f2);
+    filmler.add(f3);
+    filmler.add(f4);
+    filmler.add(f5);
 
     return filmler;
   }
@@ -79,30 +85,53 @@ class _FilmveDiziSayfaState extends State<FilmveDiziSayfa> {
                 ],
               ),
             ),
+
             FutureBuilder<List<Filmler>>(
-              future: karisikFilmler(),
-              builder: (context,snapshot){
-                if(snapshot.hasData){
-                  var film = snapshot.data;
+                future: karisikFilmler(),
+                builder: (context,snapshot) {
+                  if(snapshot.hasData){
+                    var filmler = snapshot.data;
 
-                  return SizedBox(
-                    height: 100,
-                    width: 200,
-                    child: ListView.builder(
-                      itemCount: film!.length,
-                      itemBuilder: (context,index) {
-                        var filmNesnesi = film[index];
-                        return Card(
+                    return SizedBox(
+                      height: 100,
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                       //  shrinkWrap: true,
+                         itemCount: filmler!.length,
+                         itemBuilder: (context,index) {
+                           var film = filmler[index];
+                           return GestureDetector(
+                             onTap: () {
+                               Navigator.push(context, MaterialPageRoute(builder: (context) => DetaySayfasi(film: film,)));
+                             },
+                             child: Card(
+                               child: SizedBox(
 
-                            child: Image.asset("image/filmler/${filmNesnesi.film_resim_adi}"));
-                      },
-                    ),
-                  );
-                }else{
-                  return Center();
-                }
-              },
-            )
+                                 width: 160,
+                                 child: Center(
+                                   child: SingleChildScrollView(
+                                     scrollDirection: Axis.horizontal,
+                                     child: Row(
+                                       mainAxisAlignment: MainAxisAlignment.center,
+                                       children: [
+                                         Image.asset("images/filmler/${film.film_resim_adi}")
+                                       ],
+                                     ),
+                                   ),
+                                 ),
+                               ),
+                             ),
+                           );
+                         },
+                       ),
+                    );
+
+
+                  }else{
+                    return Center();
+                  }
+                })
+
           ],
         ),
       ),
