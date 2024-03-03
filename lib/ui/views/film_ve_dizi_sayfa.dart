@@ -1,6 +1,7 @@
 import 'package:another_carousel_pro/another_carousel_pro.dart';
 import 'package:flutter/material.dart';
 import 'package:prime_video_ui_clone/ui/views/detay_sayfasi.dart';
+import 'package:prime_video_ui_clone/ui/views/detay_sayfasi_dizi.dart';
 
 import '../../data/entity/diziler.dart';
 import '../../data/entity/filmler.dart';
@@ -22,12 +23,6 @@ class _FilmveDiziSayfaState extends State<FilmveDiziSayfa> {
     var f3 = Filmler(film_id: 3, film_adi: "Cadı", film_resim_adi: "cadi.png");
     var f4 = Filmler(film_id: 4, film_adi: "Yarının Savaşı", film_resim_adi: "yarininsavasi.png");
     var f5 = Filmler(film_id: 5, film_adi: "Dayı", film_resim_adi: "dayi.png");
-/*
-    var d1 = Diziler(dizi_id: 5, dizi_ad: "Reacher", film_resim_adi: "reacher.png");
-    var d2 = Diziler(dizi_id: 6, dizi_ad: "SOZ", film_resim_adi: "soz.png");
-    var d3 = Diziler(dizi_id: 7, dizi_ad: "The Boys", film_resim_adi: "theboys.png");
-    var d4 = Diziler(dizi_id: 8, dizi_ad: "Sherlock", film_resim_adi: "sherlock.png");
-*/
 
     filmler.add(f1);
     filmler.add(f2);
@@ -37,6 +32,26 @@ class _FilmveDiziSayfaState extends State<FilmveDiziSayfa> {
 
     return filmler;
   }
+
+  Future<List<Diziler>> karisikDiziler() async{
+    List<Diziler> diziler = [];
+
+    var d1 = Diziler(dizi_id: 1, dizi_ad: "Reacher", dizi_resim_adi: "reacher.png");
+    var d2 = Diziler(dizi_id: 2, dizi_ad: "SOZ", dizi_resim_adi: "soz.png");
+    var d3 = Diziler(dizi_id: 3, dizi_ad: "The Boys", dizi_resim_adi: "theboys.png");
+    var d4 = Diziler(dizi_id: 4, dizi_ad: "Sherlock", dizi_resim_adi: "sherlock.png");
+    var d5 = Diziler(dizi_id: 5, dizi_ad: "Euphoria", dizi_resim_adi: "euphoria.png");
+
+    diziler.add(d1);
+    diziler.add(d2);
+    diziler.add(d3);
+    diziler.add(d4);
+    diziler.add(d5);
+
+    return diziler;
+  }
+
+
   @override
   Widget build(BuildContext context) {
 
@@ -77,7 +92,7 @@ class _FilmveDiziSayfaState extends State<FilmveDiziSayfa> {
                       children: <TextSpan>[
                         TextSpan(
                           text: ' - Önerilen filmler',
-                          style: TextStyle(color: Colors.white,), // 'belirli' kelimesinin rengi
+                          style: TextStyle(color: Colors.white,),
                         ),
                       ],
                     ),
@@ -107,7 +122,7 @@ class _FilmveDiziSayfaState extends State<FilmveDiziSayfa> {
                              child: Card(
                                child: SizedBox(
 
-                                 width: 160,
+                                 width: 155,
                                  child: Center(
                                    child: SingleChildScrollView(
                                      scrollDirection: Axis.horizontal,
@@ -126,6 +141,69 @@ class _FilmveDiziSayfaState extends State<FilmveDiziSayfa> {
                        ),
                     );
 
+
+                  }else{
+                    return Center();
+                  }
+                }),
+
+            Padding(
+              padding: const EdgeInsets.only(bottom: 8.0,top: 20,left: 8,right: 8),
+              child: Row(
+                children: [
+                  RichText(
+                    text: TextSpan(
+                      text: 'Prime',
+                      style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold,fontSize: 19), // Cümlenin varsayılan rengi
+                      children: <TextSpan>[
+                        TextSpan(
+                          text: ' - Önerilen diziler',
+                          style: TextStyle(color: Colors.white,),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            FutureBuilder<List<Diziler>>(
+                future: karisikDiziler(),
+                builder: (context,snapshot) {
+                  if(snapshot.hasData){
+                    var diziler = snapshot.data;
+
+                    return SizedBox(
+                      height: 100,
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: diziler!.length,
+                        itemBuilder: (context,index) {
+                          var dizi = diziler[index];
+                          return GestureDetector(
+                            onTap: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => DetaySayfasiDizi(dizi: dizi,)));
+                            },
+                            child: Card(
+                              child: SizedBox(
+
+                                width: 155,
+                                child: Center(
+                                  child: SingleChildScrollView(
+                                    scrollDirection: Axis.horizontal,
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        Image.asset("images/diziler/${dizi.dizi_resim_adi}")
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          );
+                        },
+                      ),
+                    );
 
                   }else{
                     return Center();
