@@ -16,11 +16,9 @@ class _DizilerSayfaState extends State<DizilerSayfa> {
   Future<List<Diziler>> bilimkurguDiziler() async {
     List<Diziler> diziler = [];
 
-    var d1 = Diziler(
-        dizi_id: 1, dizi_ad: "The Boys", dizi_resim_adi: "theboys.png");
-    var d2 = Diziler(dizi_id: 2, dizi_ad: "Gen V", dizi_resim_adi: "genv.png");
-    var d3 = Diziler(
-        dizi_id: 3, dizi_ad: "Jack Ryan", dizi_resim_adi: "jackryan.png");
+    var d1 = Diziler(dizi_ad: "The Boys", dizi_resim_adi: "theboys.png");
+    var d2 = Diziler(dizi_ad: "Gen V", dizi_resim_adi: "genv.png");
+    var d3 = Diziler(dizi_ad: "Jack Ryan", dizi_resim_adi: "jackryan.png");
 
 
     diziler.add(d1);
@@ -33,10 +31,10 @@ class _DizilerSayfaState extends State<DizilerSayfa> {
   Future<List<Diziler>> gerilimDiziler() async {
     List<Diziler> diziler = [];
 
-    var d1 = Diziler(dizi_id: 1, dizi_ad: "SOZ", dizi_resim_adi: "soz.png");
-    var d2 = Diziler(dizi_id: 2, dizi_ad: "Death's Game", dizi_resim_adi: "deahtsgame.png");
-    var d3 = Diziler(dizi_id: 3, dizi_ad: "Çernobil", dizi_resim_adi: "cernobil.png");
-    var d4 = Diziler(dizi_id: 2, dizi_ad: "Sherlock", dizi_resim_adi: "sherlock.png");
+    var d1 = Diziler(dizi_ad: "SOZ", dizi_resim_adi: "soz.png");
+    var d2 = Diziler(dizi_ad: "Death's Game", dizi_resim_adi: "deahtsgame.png");
+    var d3 = Diziler(dizi_ad: "Çernobil", dizi_resim_adi: "cernobil.png");
+    var d4 = Diziler(dizi_ad: "Sherlock", dizi_resim_adi: "sherlock.png");
 
     diziler.add(d1);
     diziler.add(d2);
@@ -80,7 +78,7 @@ class _DizilerSayfaState extends State<DizilerSayfa> {
               child: Row(
                 children: [
                   RichText(
-                    text: TextSpan(
+                    text: const TextSpan(
                       text: 'Prime',
                       style: TextStyle(color: Colors.blue,
                           fontWeight: FontWeight.bold,
@@ -138,7 +136,7 @@ class _DizilerSayfaState extends State<DizilerSayfa> {
                       ),
                     );
                   } else {
-                    return Center();
+                    return const Center();
                   }
                 }),
 
@@ -148,7 +146,7 @@ class _DizilerSayfaState extends State<DizilerSayfa> {
               child: Row(
                 children: [
                   RichText(
-                    text: TextSpan(
+                    text: const TextSpan(
                       text: 'Prime',
                       style: TextStyle(color: Colors.blue,
                           fontWeight: FontWeight.bold,
@@ -208,7 +206,7 @@ class _DizilerSayfaState extends State<DizilerSayfa> {
                       ),
                     );
                   } else {
-                    return Center();
+                    return const Center();
                   }
                 }),
 

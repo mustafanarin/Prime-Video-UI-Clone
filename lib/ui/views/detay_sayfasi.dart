@@ -96,9 +96,7 @@ class _DetaySayfasiState extends State<DetaySayfasi> {
                   height: 50,
                   width: 350,
                   child: ElevatedButton(
-                      onPressed: (){
-                        print("İzleme listesine tıkla");
-                      },
+                      onPressed: (){},
                       child: Text("Bunu nasıl izlerim?",style: TextStyle(color: Colors.white,fontSize: 16,fontWeight: FontWeight.bold),),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.white24,
@@ -181,11 +179,11 @@ class _DetaySayfasiState extends State<DetaySayfasi> {
                      RichText(
                        text: TextSpan(
                          text: 'Diller',
-                         style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold,fontSize: 19), // Cümlenin varsayılan rengi
+                         style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold,fontSize: 19),
                          children: <TextSpan>[
                            TextSpan(
                              text: ' Ses (16),Alt Yazılar (28)',
-                             style: TextStyle(color: Colors.white54,), // 'belirli' kelimesinin rengi
+                             style: TextStyle(color: Colors.white54,),
                            ),
                          ],
                        ),

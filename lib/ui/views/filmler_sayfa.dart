@@ -16,11 +16,11 @@ class _FilmlerSayfaState extends State<FilmlerSayfa> {
   Future<List<Filmler>> bilimKurguFilmler() async{
     List<Filmler> filmler = [];
 
-    var f1 = Filmler(film_id: 1, film_adi: "Gökdelen", film_resim_adi: "gokdelen.png");
-    var f2 = Filmler(film_id: 2, film_adi: "Lucy", film_resim_adi: "lucy.png");
-    var f3 = Filmler(film_id: 3, film_adi: "Mumya", film_resim_adi: "mumya.png");
-    var f4 = Filmler(film_id: 4, film_adi: "Yarının Savaşı", film_resim_adi: "yarininsavasi.png");
-    var f5 = Filmler(film_id: 5, film_adi: "Renfield", film_resim_adi: "renfield.png");
+    var f1 = Filmler(film_adi: "Gökdelen", film_resim_adi: "gokdelen.png");
+    var f2 = Filmler(film_adi: "Lucy", film_resim_adi: "lucy.png");
+    var f3 = Filmler(film_adi: "Mumya", film_resim_adi: "mumya.png");
+    var f4 = Filmler(film_adi: "Yarının Savaşı", film_resim_adi: "yarininsavasi.png");
+    var f5 = Filmler(film_adi: "Renfield", film_resim_adi: "renfield.png");
 
     filmler.add(f1);
     filmler.add(f2);
@@ -32,9 +32,9 @@ class _FilmlerSayfaState extends State<FilmlerSayfa> {
   }Future<List<Filmler>> gerilimFilmler() async{
     List<Filmler> filmler = [];
 
-    var f1 = Filmler(film_id: 1, film_adi: "Kulübeye Tıklat", film_resim_adi: "kulubeyetiklat.png");
-    var f2 = Filmler(film_id: 2, film_adi: "Dayı", film_resim_adi: "dayi.png");
-    var f3 = Filmler(film_id: 3, film_adi: "Bihter", film_resim_adi: "bihter.png");
+    var f1 = Filmler(film_adi: "Kulübeye Tıklat", film_resim_adi: "kulubeyetiklat.png");
+    var f2 = Filmler(film_adi: "Dayı", film_resim_adi: "dayi.png");
+    var f3 = Filmler(film_adi: "Bihter", film_resim_adi: "bihter.png");
 
 
     filmler.add(f1);
@@ -78,9 +78,9 @@ class _FilmlerSayfaState extends State<FilmlerSayfa> {
               child: Row(
                 children: [
                   RichText(
-                    text: TextSpan(
+                    text: const TextSpan(
                       text: 'Prime',
-                      style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold,fontSize: 19), // Cümlenin varsayılan rengi
+                      style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold,fontSize: 19),
                       children: <TextSpan>[
                         TextSpan(
                           text: ' - Bilimkurgu filmleri',
@@ -134,7 +134,7 @@ class _FilmlerSayfaState extends State<FilmlerSayfa> {
 
 
                   }else{
-                    return Center();
+                    return const Center();
                   }
                 }),
 
@@ -143,9 +143,9 @@ class _FilmlerSayfaState extends State<FilmlerSayfa> {
               child: Row(
                 children: [
                   RichText(
-                    text: TextSpan(
+                    text: const TextSpan(
                       text: 'Prime',
-                      style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold,fontSize: 19), // Cümlenin varsayılan rengi
+                      style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold,fontSize: 19),
                       children: <TextSpan>[
                         TextSpan(
                           text: ' - Gerilim filmleri',
@@ -199,7 +199,7 @@ class _FilmlerSayfaState extends State<FilmlerSayfa> {
 
 
                   }else{
-                    return Center();
+                    return const Center();
                   }
                 }),
 

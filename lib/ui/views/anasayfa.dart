@@ -4,6 +4,8 @@ import 'package:prime_video_ui_clone/ui/views/indirilenler_sayfa.dart';
 import 'package:prime_video_ui_clone/ui/views/top_tap_bar.dart';
 
 class Anasayfa extends StatefulWidget {
+  const Anasayfa({super.key});
+
 
   @override
   State<Anasayfa> createState() => _AnasayfaState();
@@ -37,20 +39,20 @@ class _AnasayfaState extends State<Anasayfa> with SingleTickerProviderStateMixin
             height: 35,
             child: Image.asset("images/logo/prime-video-logo.webp",fit: BoxFit.cover,),
           ),
-          actions: [
+          actions: const [
             Icon(Icons.tv,color: Colors.white54,size: 30,),
             SizedBox(
               width: 20,
             ),
             Padding(
-              padding: const EdgeInsets.only(right: 15.0),
+              padding: EdgeInsets.only(right: 15.0),
               child: Icon(Icons.person_pin,color: Colors.lightBlue,size: 35,),
             )
           ],
         ),
         body: TabBarView(
           controller: _tabController,
-          children: [
+          children: const [
             TopTapBar(),
             IndirilenlerSayfa(),
             AramaSayfa()
@@ -67,7 +69,7 @@ class _AnasayfaState extends State<Anasayfa> with SingleTickerProviderStateMixin
                 borderSide: BorderSide(width: 0.0)
             ),
             labelColor: Colors.white,
-            labelStyle: TextStyle(fontSize: 12.0),
+            labelStyle: const TextStyle(fontSize: 12.0),
 
             tabs: const [
               Tab(icon: Icon(Icons.home,size: 27,),iconMargin: EdgeInsets.only(top: 3),child: Text("Anasayfa",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),),

@@ -180,11 +180,11 @@ class _DetaySayfasiDiziState extends State<DetaySayfasiDizi> {
                     RichText(
                       text: TextSpan(
                         text: 'Diller',
-                        style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold,fontSize: 19), // Cümlenin varsayılan rengi
+                        style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold,fontSize: 19),
                         children: <TextSpan>[
                           TextSpan(
                             text: ' Ses (16),Alt Yazılar (28)',
-                            style: TextStyle(color: Colors.white54,), // 'belirli' kelimesinin rengi
+                            style: TextStyle(color: Colors.white54,),
                           ),
                         ],
                       ),
