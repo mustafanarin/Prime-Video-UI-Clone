@@ -16,7 +16,7 @@ class _IndirilenlerSayfaState extends State<IndirilenlerSayfa> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Henüz video indirilmedi",style: TextStyle(color: Colors.white,fontSize: 22,fontWeight: FontWeight.bold),),
+            const Text("Henüz video indirilmedi",style: TextStyle(color: Colors.white,fontSize: 22,fontWeight: FontWeight.bold),),
 
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -26,7 +26,7 @@ class _IndirilenlerSayfaState extends State<IndirilenlerSayfa> {
                   child: Row(
                     children: [
                       RichText(
-                        text: TextSpan(
+                        text: const TextSpan(
                           text: 'Otomatik İndirmeler:Açık  • ',
                           style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 17),
                           children: <TextSpan>[

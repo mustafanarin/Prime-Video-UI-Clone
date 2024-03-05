@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prime_video_ui_clone/ui/views/my_custom_button.dart';
 
 class AramaSayfa extends StatefulWidget {
   const AramaSayfa({super.key});
@@ -46,69 +47,18 @@ class _AramaSayfaState extends State<AramaSayfa> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    SizedBox(
-                      width: 160,
-                      height: 60,
-                      child: ElevatedButton(
-                          onPressed: () {},
-                          child: const Text("Aksiyon ve macera",style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.bold),textAlign: TextAlign.center,),
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.blueGrey,
-                            shape: const RoundedRectangleBorder(
-                              borderRadius: BorderRadius.all(Radius.circular(0))
-                            )
-                          ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 160,
-                      height: 60,
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.blueGrey,
-                            shape: const RoundedRectangleBorder(
-                                borderRadius: BorderRadius.all(Radius.circular(0))
-                            )
-                        ),
-                        child: const Text("Komedi",style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.bold),),
-                      ),
-                    )
+                    MyCustomButton(buttonText: "Aksiyon ve macera",),
+                    MyCustomButton(buttonText: "Komedi",),
                   ],
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 5.0,bottom: 5),                child: Row(
+                padding: const EdgeInsets.only(top: 5.0,bottom: 5),
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    SizedBox(
-                      width: 160,
-                      height: 60,
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        child: const Text("Belgesel",style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.bold),),
-                        style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.blueGrey,
-                            shape: const RoundedRectangleBorder(
-                                borderRadius: BorderRadius.all(Radius.circular(0))
-                            )
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 160,
-                      height: 60,
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        child: const Text("Dram",style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.bold),),
-                        style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.blueGrey,
-                            shape: const RoundedRectangleBorder(
-                                borderRadius: BorderRadius.all(Radius.circular(0))
-                            )
-                        ),
-                      ),
-                    )
+                    MyCustomButton(buttonText: "Belgesel",),
+                    MyCustomButton(buttonText: "Dram",),
                   ],
                 ),
               ),
@@ -117,34 +67,8 @@ class _AramaSayfaState extends State<AramaSayfa> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    SizedBox(
-                      width: 160,
-                      height: 60,
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        child: const Text("Fantastik",style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.bold),),
-                        style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.blueGrey,
-                            shape: const RoundedRectangleBorder(
-                                borderRadius: BorderRadius.all(Radius.circular(0))
-                            )
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 160,
-                      height: 60,
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        child: const Text("Korku",style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.bold),),
-                        style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.blueGrey,
-                            shape: const RoundedRectangleBorder(
-                                borderRadius: BorderRadius.all(Radius.circular(0))
-                            )
-                        ),
-                      ),
-                    )
+                    MyCustomButton(buttonText: "Fantastik",),
+                    MyCustomButton(buttonText: "Korku",),
                   ],
                 ),
               ),
@@ -153,34 +77,8 @@ class _AramaSayfaState extends State<AramaSayfa> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    SizedBox(
-                      width: 160,
-                      height: 60,
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        child: const Text("Çocuk",style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.bold),),
-                        style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.blueGrey,
-                            shape: const RoundedRectangleBorder(
-                                borderRadius: BorderRadius.all(Radius.circular(0))
-                            )
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 160,
-                      height: 60,
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        child: const Text("Gizem ve gerilimler",style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.bold),textAlign: TextAlign.center,),
-                        style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.blueGrey,
-                            shape: const RoundedRectangleBorder(
-                                borderRadius: BorderRadius.all(Radius.circular(0))
-                            )
-                        ),
-                      ),
-                    )
+                    MyCustomButton(buttonText: "Çocuk",),
+                    MyCustomButton(buttonText: "Gizem ve gerilimler",),
                   ],
                 ),
               ),
@@ -189,34 +87,8 @@ class _AramaSayfaState extends State<AramaSayfa> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    SizedBox(
-                      width: 160,
-                      height: 60,
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        child: const Text("Romantik",style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.bold),),
-                        style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.blueGrey,
-                            shape: const RoundedRectangleBorder(
-                                borderRadius: BorderRadius.all(Radius.circular(0))
-                            )
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 160,
-                      height: 60,
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        child: const Text("Bilim kurgu",style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.bold),),
-                        style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.blueGrey,
-                            shape: const RoundedRectangleBorder(
-                                borderRadius: BorderRadius.all(Radius.circular(0))
-                            )
-                        ),
-                      ),
-                    )
+                    MyCustomButton(buttonText: "Romantik",),
+                    MyCustomButton(buttonText: "Bilim kurgu",),
                   ],
                 ),
               ),
@@ -225,7 +97,9 @@ class _AramaSayfaState extends State<AramaSayfa> {
                 padding: EdgeInsets.only(top: 20.0),
                 child: Row(
                   children: [
-                    Text("Seçme koleksiyonlar",style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
+                    Text(
+                      "Seçme koleksiyonlar",
+                      style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
                   ],
                 ),
               ),
@@ -233,7 +107,9 @@ class _AramaSayfaState extends State<AramaSayfa> {
               const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("Avrupa'da üretilmiştir",style: TextStyle(color: Colors.white,fontSize: 15,fontWeight: FontWeight.bold),),
+                  Text(
+                    "Avrupa'da üretilmiştir",
+                    style: TextStyle(color: Colors.white,fontSize: 15,fontWeight: FontWeight.bold),),
                   Icon(Icons.arrow_forward_ios,color: Colors.white,size: 16,)
                 ],
               )
@@ -244,3 +120,7 @@ class _AramaSayfaState extends State<AramaSayfa> {
     );
   }
 }
+
+
+
+

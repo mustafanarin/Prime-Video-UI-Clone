@@ -56,7 +56,7 @@ class _DizilerSayfaState extends State<DizilerSayfa> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 250,
+              height: 240,
               width: genislik,
               child: AnotherCarousel(
                 images: [
@@ -64,7 +64,7 @@ class _DizilerSayfaState extends State<DizilerSayfa> {
                   Image.asset("images/diziler/genv.png", fit: BoxFit.cover,),
                   Image.asset("images/diziler/sherlock.png", fit: BoxFit.cover,),
                   Image.asset("images/diziler/theboys.png", fit: BoxFit.cover,),
-                  Image.asset("images/diziler/theoffice.png", fit: BoxFit.cover,)
+                  Image.asset("images/diziler/infazlistesi.png", fit: BoxFit.cover,)
                 ],
                 dotSize: 8,
                 dotColor: Colors.white24,

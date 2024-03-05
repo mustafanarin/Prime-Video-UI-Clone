@@ -57,7 +57,7 @@ class _FilmlerSayfaState extends State<FilmlerSayfa> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 250,
+              height: 240,
               width: genislik,
               child: AnotherCarousel(
                 images: [

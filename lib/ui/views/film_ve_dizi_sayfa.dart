@@ -67,15 +67,15 @@ class _FilmveDiziSayfaState extends State<FilmveDiziSayfa> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
-                height: 250,
+                height: 240,
                 width: genislik,
                 child: AnotherCarousel(
                   images: [
-                    Image.asset("images/filmler/yarininsavasi.png",fit: BoxFit.cover,),
+                    Image.asset("images/filmler/renfield.png",fit: BoxFit.cover,),
                     Image.asset("images/filmler/lucy.png",fit: BoxFit.cover,),
                     Image.asset("images/diziler/sherlock.png",fit: BoxFit.cover,),
                     Image.asset("images/filmler/kulubeyetiklat.png",fit: BoxFit.cover,),
-                    Image.asset("images/diziler/reacher.png",fit: BoxFit.cover,)
+                    Image.asset("images/diziler/theoffice.png",fit: BoxFit.cover,)
                   ],
                   dotSize: 8,
                   dotColor: Colors.white24,
@@ -187,7 +187,6 @@ class _FilmveDiziSayfaState extends State<FilmveDiziSayfa> {
                               },
                               child: Card(
                                 child: SizedBox(
-
                                   width: 155,
                                   child: Center(
                                     child: SingleChildScrollView(

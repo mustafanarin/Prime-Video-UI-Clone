@@ -17,7 +17,7 @@ class _TopTapBarState extends State<TopTapBar> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(kToolbarHeight),
+        preferredSize: const Size.fromHeight(kToolbarHeight),
         child: Column(
           children: [
             Material(
@@ -92,7 +92,7 @@ class _TopTapBarState extends State<TopTapBar> {
           ],
         ),
       ),
-      body: TabBarView(
+      body: const TabBarView(
         children: [
           FilmveDiziSayfa(),
           FilmlerSayfa(),

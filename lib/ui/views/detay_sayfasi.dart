@@ -25,13 +25,13 @@ class _DetaySayfasiState extends State<DetaySayfasi> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Colors.black,
-        actions: [
+        actions: const [
           Icon(Icons.tv,color: Colors.white54,size: 30,),
           SizedBox(
             width: 20,
           ),
           Padding(
-            padding: const EdgeInsets.only(right: 15.0),
+            padding: EdgeInsets.only(right: 15.0),
             child: Icon(Icons.person_pin,color: Colors.lightBlue,size: 35,),
           )
         ],
@@ -51,7 +51,7 @@ class _DetaySayfasiState extends State<DetaySayfasi> {
               Positioned.fill(
                 child: ShaderMask(
                   shaderCallback: (Rect bounds) {
-                    return LinearGradient(
+                    return const LinearGradient(
                       begin: Alignment.bottomCenter,
                       end: Alignment.topCenter,
                       colors: [Colors.transparent, Colors.black],
@@ -68,14 +68,14 @@ class _DetaySayfasiState extends State<DetaySayfasi> {
           ),
           Padding(
             padding: const EdgeInsets.only(left: 30.0),
-            child: Text("${widget.film.film_adi}",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 25),),
+            child: Text("${widget.film.film_adi}",style: const TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 25),),
           ),
 
           Padding(
-             padding: EdgeInsets.only(right: 10.0,left: 10.0),
+             padding: const EdgeInsets.only(right: 10.0,left: 10.0),
              child: Column(
                children: [
-                 Row(
+                 const Row(
                    children: [
                      Icon(Icons.check_circle,color: Colors.blue,size: 16,),
                      Center(
@@ -97,7 +97,7 @@ class _DetaySayfasiState extends State<DetaySayfasi> {
                   width: 350,
                   child: ElevatedButton(
                       onPressed: (){},
-                      child: Text("Bunu nasıl izlerim?",style: TextStyle(color: Colors.white,fontSize: 16,fontWeight: FontWeight.bold),),
+                      child: const Text("Bunu nasıl izlerim?",style: TextStyle(color: Colors.white,fontSize: 16,fontWeight: FontWeight.bold),),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.white24,
                         shape: const RoundedRectangleBorder(
@@ -105,7 +105,7 @@ class _DetaySayfasiState extends State<DetaySayfasi> {
                         )
                       ),),
                 ),
-                 Row(
+                 const Row(
                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                    children: [
                      SizedBox(
@@ -158,17 +158,17 @@ class _DetaySayfasiState extends State<DetaySayfasi> {
                      onPressed: () {
 
                      },
-                     child: Text(
+                     child: const Text(
                        "Açıklama",
                        style: TextStyle(color: Colors.white,fontSize: 20,decoration: TextDecoration.underline,decorationColor: Colors.white),) ),
 
-                 Row(
+                 const Row(
                    crossAxisAlignment: CrossAxisAlignment.start,
                    children: [
                      Text("IMBD 7,2",style: TextStyle(color: Colors.white54,fontWeight: FontWeight.bold,fontSize: 18),)
                    ],
                  ),
-                 Row(
+                 const Row(
                    crossAxisAlignment: CrossAxisAlignment.start,
                    children: [
                      Text("2023",style: TextStyle(color: Colors.white54,fontWeight: FontWeight.bold,fontSize: 18),)
@@ -177,7 +177,7 @@ class _DetaySayfasiState extends State<DetaySayfasi> {
                  Row(
                    children: [
                      RichText(
-                       text: TextSpan(
+                       text: const TextSpan(
                          text: 'Diller',
                          style: TextStyle(color: Colors.blue,fontWeight: FontWeight.bold,fontSize: 19),
                          children: <TextSpan>[
